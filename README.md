@@ -47,3 +47,26 @@
 
     X_normalized = (X - np.mean(X)) / np.std(X)
     X_normalized                                 #Normalized array
+
+        #Result:
+            array([[ 0.06340841, -1.36714726, -1.2124926 ,  0.79801809, -0.98051059],
+                   [-1.36714726, -0.20723725, -1.28981993,  0.75935442, -0.86451959],
+                   [ 0.95267275,  1.26198209,  0.25672675,  0.79801809,  0.91400909],
+                   [ 1.18465476, -0.43921926,  1.72594609, -1.05783793,  1.91926443],
+                   [-0.43921926,  0.29539042, -0.36189192, -0.20723725, -1.13516526]])
+
+X_normalized is the normalized array. The list of values on this array are the result of applying the mean and the standard deviation to the original values (X).
+
+    np.mean(X_normalized)  #Average of X_normalized
+
+        #Result:
+            np.float64(0.0)
+
+    np.std(X_normalized)  #Standard deviation of X_normalized
+
+        #Result:
+            np.float64(0.9999999999999999)
+
+##### Note:
+
+Display X, X normalized, its mean, and its standard deviation.
