@@ -13,13 +13,37 @@
 ## A. Reproducible Normalization Problem
 #### <p align="justify"> In this problem, a 5×5 array (X) is composed of random integers from 10 to 100, and it is asked to get the average (.mean()) and standard deviation (.std()) of X. To achieve a mean of approximately 0 and standard deviation of approximately 1 without using loop, we have to normalize the array using (X - np.mean(X)) / np.std(X)). The normalized array (X_normalized) is a new set of 5×5 integer array that came from the original random integer values in array (X). </p>
 
+    
     import numpy as np
   
     np.random.seed(2112)
     X = np.random.randint(10, 101, size=(5, 5))
     X                                             #5x5 array (X)
+        
+        #Result:
+            array([[48, 11, 15, 67, 21],
+                  [11, 41, 13, 66, 24],
+                  [71, 79, 53, 67, 70],
+                  [77, 35, 91, 19, 96],
+                  [35, 54, 37, 41, 17]])
 
 ##### Note:
 
 (np.random.seed(2112)) allows us to create a reproducible random 5×5 integer array (X), while (np.random.randint(10, 101, size=(5, 5))) generates the random integers inside the array. 
 
+    Average = np.mean(X)
+    Average
+
+        #Result:
+            np.float64(46.36)
+            
+    Std = np.std(X)
+    Std                     #Standard deviation
+
+        #Result:
+            np.float64(25.864075471588002)
+
+.mean( ) and .std( ) are used to calculate the average (mean) and the standard deviation.
+
+    X_normalized = (X - np.mean(X)) / np.std(X)
+    X_normalized                                 #Normalized array
