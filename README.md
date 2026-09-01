@@ -196,3 +196,83 @@ To save the NumPy array as .npy file:
     
     np.save("div_by_4.npy", div_by_4)
 
+
+#
+## C. Above-Mean Squares Problem
+#### <p align="justify"> This problem requires us to create a 6×6 array named S to find which squared values are greater than the average (mean) of all the squared values. The values inside the 6×6 array consists of the squares of first 36 positive integers, wherein we raise each values to the power of 2 (S = numbers**2). To construct the array, we use (np.arange(1, 37)) to generate the values, and use (np.reshape(6, 6)) to shape array (S) into 6 rows × 6 columns. </p>
+
+
+    import numpy as np
+
+    numbers = np.arange(1, 37)
+    numbers
+
+        #Result:
+            array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36])
+
+    S = numbers**2
+    S
+
+        #Result:
+            array([   1,    4,    9,   16,   25,   36,   49,   64,   81,  100,  121, 144,  169,  196,  225,  256,  289,  324,  361,  400,  441,  484,
+                    529,  576,  625,  676,  729,  784,  841,  900,  961, 1024, 1089, 1156, 1225, 1296])
+                    
+
+The first array consists of the first 36 positive integers. The second array is the list of values that were raised to the power of 2 from the original values in the first array.
+
+    S = S.reshape(6, 6)
+    S
+
+        #Result:
+            array([[   1,    4,    9,   16,   25,   36],
+                   [  49,   64,   81,  100,  121,  144],
+                   [ 169,  196,  225,  256,  289,  324],
+                   [ 361,  400,  441,  484,  529,  576],
+                   [ 625,  676,  729,  784,  841,  900],
+                   [ 961, 1024, 1089, 1156, 1225, 1296]])
+
+To shape the array into 6 rows × 6 columns, we used (S.reshape(6, 6)).
+
+
+    S_mean = S.mean()
+    S_mean
+
+        #Result:
+            np.float64(450.1666666666667)
+
+    above_mean = S[S > np.mean(S)]
+    above_mean
+
+        #Result:
+            array([ 484,  529,  576,  625,  676,  729,  784,  841,  900,  961, 1024,  1089, 1156, 1225, 1296])
+
+##### Note:
+
+Display S, S mean, above mean, and the number of selected elements.
+
+    print (S)                 #S
+    print (S_mean)            #Mean of S
+    print (above_mean)        #Above mean
+    print (above_mean.size)   #Number of selected elements
+
+        #Result:
+            [[   1    4    9   16   25   36]
+             [  49   64   81  100  121  144]
+             [ 169  196  225  256  289  324]
+             [ 361  400  441  484  529  576]
+             [ 625  676  729  784  841  900]
+             [ 961 1024 1089 1156 1225 1296]]
+            450.1666666666667
+            [ 484  529  576  625  676  729  784  841  900  961 1024 1089 1156 1225 1296]
+            15
+
+To save the NumPy array as .npy file:
+
+    np.save("above_mean.npy", above_mean)
+
+#
+#
+## _____________________________________________________________________________________________________
+# Conclusion:
+#### <p align="justify"> Even without the use of loops, we can achieve how to create, reshape, and calculate arrays using NumPy. This experiment demonstrated the application of normalization that was associated by mean and standard deviation. While Boolean filtering and cubing or squaring values were used to satisfy given conditions. NumPy has a significant performance in making numerical data clean and organized. </p>
+## _____________________________________________________________________________________________________
