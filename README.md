@@ -193,5 +193,6 @@ Display the shape of C, the array div by 4, and the number of selected elements.
             50
 
 To save the NumPy array as .npy file:
+    
     np.save("div_by_4.npy", div_by_4)
 
