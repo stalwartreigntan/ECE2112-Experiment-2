@@ -13,13 +13,13 @@
 ## A. Reproducible Normalization Problem
 #### <p align="justify"> In this problem, a 5×5 array (X) is composed of random integers from 10 to 100, and it is asked to get the average (.mean()) and standard deviation (.std()) of X. To achieve a mean of approximately 0 and standard deviation of approximately 1 without using loop, we have to normalize the array using (X - np.mean(X)) / np.std(X)). The normalized array (X_normalized) is a new set of 5×5 integer array that came from the original random integer values in array (X). </p>
 
-    
-    import numpy as np
+```python
+import numpy as np
   
-    np.random.seed(2112)
-    X = np.random.randint(10, 101, size=(5, 5))
-    X                                             #5x5 array (X)
-        
+np.random.seed(2112)
+X = np.random.randint(10, 101, size=(5, 5))
+X                                             #5x5 array (X)
+``` 
         #Result:
             array([[48, 11, 15, 67, 21],
                   [11, 41, 13, 66, 24],
@@ -31,23 +31,26 @@
 
 (np.random.seed(2112)) allows us to create a reproducible random 5×5 integer array (X), while (np.random.randint(10, 101, size=(5, 5))) generates the random integers inside the array. 
 
-    Average = np.mean(X)
-    Average
-
+```python
+Average = np.mean(X)
+Average
+```
         #Result:
             np.float64(46.36)
-            
+
+```python
     Std = np.std(X)
     Std                     #Standard deviation
-
+```
         #Result:
             np.float64(25.864075471588002)
 
 .mean( ) and .std( ) are used to calculate the average (mean) and the standard deviation.
 
+```python
     X_normalized = (X - np.mean(X)) / np.std(X)
     X_normalized                                 #Normalized array
-
+```
         #Result:
             array([[ 0.06340841, -1.36714726, -1.2124926 ,  0.79801809, -0.98051059],
                    [-1.36714726, -0.20723725, -1.28981993,  0.75935442, -0.86451959],
@@ -57,13 +60,15 @@
 
 X_normalized is the normalized array. The list of values on this array are the result of applying the mean and the standard deviation to the original values (X).
 
+```python
     np.mean(X_normalized)  #Average of X_normalized
-
+```
         #Result:
             np.float64(0.0)
 
+```python
     np.std(X_normalized)  #Standard deviation of X_normalized
-
+```
         #Result:
             np.float64(0.9999999999999999)
 
@@ -71,13 +76,14 @@ X_normalized is the normalized array. The list of values on this array are the r
 
 Display X, X normalized, its mean, and its standard deviation.
 
+```python
     print (X)                       #X
     print (Average)                 #Mean of X
     print (Std)                     #Standard deviation of X
     print (X_normalized)            #X normalized
     print (np.mean(X_normalized))   #Mean of X normalized
     print (np.std(X_normalized))    #Standard deviation of X normalized
-
+```
         #Result:
             [[48 11 15 67 21]
              [11 41 13 66 24]
@@ -94,7 +100,10 @@ Display X, X normalized, its mean, and its standard deviation.
             0.0
             0.9999999999999999
 
+```python
     np.save("X_normalized.npy", X_normalized)
+```
+
 ##### Note:
 np.save() allows us to save a NumPy array as a .npy file.
 
@@ -102,12 +111,12 @@ np.save() allows us to save a NumPy array as a .npy file.
 ## B. Cubes Divisible by 4 Problem
 #### <p align="justify"> The use of NumPy in this problem is to create a 10×10 array named C. The values of this array consists of first 100 positive integers. To create array C, we use (np.arange(1, 101)) to generate the values inside the array, and use (C.reshape (10, 10)) to form a 10 rows × 10 columns of the values after we define the numbers. </p>
 
+```python
+import numpy as np
 
-    import numpy as np
-
-    numbers = np.arange(1, 101)
-    numbers
-
+numbers = np.arange(1, 101)
+numbers
+```
         #Result:
             array([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,
                     14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,
@@ -120,10 +129,10 @@ np.save() allows us to save a NumPy array as a .npy file.
 
 The values inside the array are the first 100 positive integers.
 
-
-    C = numbers**3
-    C
-
+```python
+C = numbers**3
+C
+```
         #Result:
             array([      1,       8,      27,      64,     125,     216,     343,
                        512,     729,    1000,    1331,    1728,    2197,    2744,
@@ -143,9 +152,10 @@ The values inside the array are the first 100 positive integers.
 
 Array C must begin with 1^3 and ends with 100^3, Therefore; (C = numbers**3) simply cubes each number inside the array, which results to a list of cubed values.
 
-    C = C.reshape (10, 10)
-    C                         #10 rows, 10 columns
-
+```python
+C = C.reshape (10, 10)
+C                         #10 rows, 10 columns
+```
         #Result:
             array([[      1,       8,      27,      64,     125,     216,     343,    512,     729,    1000],
                    [   1331,    1728,    2197,    2744,    3375,    4096,    4913,    5832,    6859,    8000],
@@ -161,9 +171,10 @@ Array C must begin with 1^3 and ends with 100^3, Therefore; (C = numbers**3) sim
 
 <p align="justify"> To obtain every cubed value divisible by 4, we use the Boolean condition (C[C % 4 == 0]). To understand this Boolean condition, (C % 4) tells the program to divide each value inside array C by 4, while ( == 0 ) gives the values that are divisible by 4 without a remainder, or with a remainder of 0. </p>
 
-    div_by_4 = C[C % 4 == 0]
-    div_by_4
-
+```python
+div_by_4 = C[C % 4 == 0]
+div_by_4
+```
         #Result:
             array([      8,      64,     216,     512,    1000,    1728,    2744,
                       4096,    5832,    8000,   10648,   13824,   17576,   21952,
@@ -178,10 +189,11 @@ Array C must begin with 1^3 and ends with 100^3, Therefore; (C = numbers**3) sim
 
 Display the shape of C, the array div by 4, and the number of selected elements.
 
+```python
     print (C.shape)        #Shape of C
     print (div_by_4)       #Array div by 4
     print (div_by_4.size)  #Number of selected elements
-
+```
         #Result:
             (10, 10)
             [      8      64     216     512    1000    1728    2744    4096    5832
@@ -193,26 +205,27 @@ Display the shape of C, the array div by 4, and the number of selected elements.
             50
 
 To save the NumPy array as .npy file:
-    
-    np.save("div_by_4.npy", div_by_4)
-
+```python
+np.save("div_by_4.npy", div_by_4)
+```
 
 #
 ## C. Above-Mean Squares Problem
 #### <p align="justify"> This problem requires us to create a 6×6 array named S to find which squared values are greater than the average (mean) of all the squared values. The values inside the 6×6 array consists of the squares of first 36 positive integers, wherein we raise each values to the power of 2 (S = numbers**2). To construct the array, we use (np.arange(1, 37)) to generate the values, and use (np.reshape(6, 6)) to shape array (S) into 6 rows × 6 columns. </p>
 
+```python
+import numpy as np
 
-    import numpy as np
-
-    numbers = np.arange(1, 37)
-    numbers
-
+numbers = np.arange(1, 37)
+numbers
+```
         #Result:
             array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36])
 
-    S = numbers**2
-    S
-
+```python
+S = numbers**2
+S
+```
         #Result:
             array([   1,    4,    9,   16,   25,   36,   49,   64,   81,  100,  121, 144,  169,  196,  225,  256,  289,  324,  361,  400,  441,  484,
                     529,  576,  625,  676,  729,  784,  841,  900,  961, 1024, 1089, 1156, 1225, 1296])
@@ -220,9 +233,10 @@ To save the NumPy array as .npy file:
 
 The first array consists of the first 36 positive integers. The second array is the list of values that were raised to the power of 2 from the original values in the first array.
 
-    S = S.reshape(6, 6)
-    S
-
+```python
+S = S.reshape(6, 6)
+S
+```
         #Result:
             array([[   1,    4,    9,   16,   25,   36],
                    [  49,   64,   81,  100,  121,  144],
@@ -233,16 +247,17 @@ The first array consists of the first 36 positive integers. The second array is 
 
 To shape the array into 6 rows × 6 columns, we used (S.reshape(6, 6)).
 
-
+```python
     S_mean = S.mean()
     S_mean
-
+```
         #Result:
             np.float64(450.1666666666667)
 
+```python
     above_mean = S[S > np.mean(S)]
     above_mean
-
+```
         #Result:
             array([ 484,  529,  576,  625,  676,  729,  784,  841,  900,  961, 1024,  1089, 1156, 1225, 1296])
 
@@ -250,11 +265,12 @@ To shape the array into 6 rows × 6 columns, we used (S.reshape(6, 6)).
 
 Display S, S mean, above mean, and the number of selected elements.
 
+```python
     print (S)                 #S
     print (S_mean)            #Mean of S
     print (above_mean)        #Above mean
     print (above_mean.size)   #Number of selected elements
-
+```
         #Result:
             [[   1    4    9   16   25   36]
              [  49   64   81  100  121  144]
@@ -268,8 +284,9 @@ Display S, S mean, above mean, and the number of selected elements.
 
 To save the NumPy array as .npy file:
 
+```python
     np.save("above_mean.npy", above_mean)
-
+```
 #
 #
 ## _____________________________________________________________________________________________________
