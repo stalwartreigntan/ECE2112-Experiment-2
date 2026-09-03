@@ -11,7 +11,7 @@
 
 #
 ## A. Reproducible Normalization Problem
-#### <p align="justify"> In this problem, a 5×5 array (X) is composed of random integers from 10 to 100, and it is asked to get the average (.mean()) and standard deviation (.std()) of X. To achieve a mean of approximately 0 and standard deviation of approximately 1 without using loop, we have to normalize the array using (X - np.mean(X)) / np.std(X)). The normalized array (X_normalized) is a new set of 5×5 integer array that came from the original random integer values in array (X). </p>
+#### <p align="justify"> In this problem, a 5×5 array `(X)` is composed of random integers from 10 to 100, and it is asked to get the average `.mean()` and standard deviation `.std()` of X. To achieve a mean of approximately 0 and standard deviation of approximately 1 without using loop, we have to normalize the array using `X - np.mean(X) / np.std(X)`. The normalized array `(X_normalized)` is a new set of 5×5 integer array that came from the original random integer values in array `(X)`. </p>
 
 ```python
   import numpy as np
@@ -29,7 +29,7 @@
 
 ##### Note:
 
-(np.random.seed(2112)) allows us to create a reproducible random 5×5 integer array (X), while (np.random.randint(10, 101, size=(5, 5))) generates the random integers inside the array. 
+`np.random.seed(2112)` allows us to create a reproducible random 5×5 integer array `(X)`, while `np.random.randint(10, 101, size=(5, 5))` generates the random integers inside the array. 
 
 ```python
   Average = np.mean(X)
@@ -45,7 +45,7 @@
         #Result:
             np.float64(25.864075471588002)
 
-.mean( ) and .std( ) are used to calculate the average (mean) and the standard deviation.
+`.mean( )` and `.std( )` are used to calculate the average (mean) and the standard deviation.
 
 ```python
     X_normalized = (X - np.mean(X)) / np.std(X)
@@ -58,7 +58,7 @@
                    [ 1.18465476, -0.43921926,  1.72594609, -1.05783793,  1.91926443],
                    [-0.43921926,  0.29539042, -0.36189192, -0.20723725, -1.13516526]])
 
-X_normalized is the normalized array. The list of values on this array are the result of applying the mean and the standard deviation to the original values (X).
+`X_normalized` is the normalized array. The list of values on this array are the result of applying the mean and the standard deviation to the original values `(X)`.
 
 ```python
     np.mean(X_normalized)  #Average of X_normalized
@@ -105,11 +105,11 @@ Display X, X normalized, its mean, and its standard deviation.
 ```
 
 ##### Note:
-np.save() allows us to save a NumPy array as a .npy file.
+`np.save()` allows us to save a NumPy array as a .npy file.
 
 #
 ## B. Cubes Divisible by 4 Problem
-#### <p align="justify"> The use of NumPy in this problem is to create a 10×10 array named C. The values of this array consists of first 100 positive integers. To create array C, we use (np.arange(1, 101)) to generate the values inside the array, and use (C.reshape (10, 10)) to form a 10 rows × 10 columns of the values after we define the numbers. </p>
+#### <p align="justify"> The use of NumPy in this problem is to create a 10×10 array named C. The values of this array consists of first 100 positive integers. To create array C, we use `np.arange(1, 101)` to generate the values inside the array, and use `C.reshape (10, 10)` to form a 10 rows × 10 columns of the values after we define the numbers. </p>
 
 ```python
   import numpy as np
@@ -150,7 +150,7 @@ The values inside the array are the first 100 positive integers.
                     778688,  804357,  830584,  857375,  884736,  912673,  941192,
                     970299, 1000000])
 
-Array C must begin with 1^3 and ends with 100^3, Therefore; (C = numbers**3) simply cubes each number inside the array, which results to a list of cubed values.
+Array C must begin with 1^3 and ends with 100^3, Therefore; `C = numbers**3` simply cubes each number inside the array, which results to a list of cubed values.
 
 ```python
   C = C.reshape (10, 10)
@@ -211,7 +211,7 @@ To save the NumPy array as .npy file:
 
 #
 ## C. Above-Mean Squares Problem
-#### <p align="justify"> This problem requires us to create a 6×6 array named S to find which squared values are greater than the average (mean) of all the squared values. The values inside the 6×6 array consists of the squares of first 36 positive integers, wherein we raise each values to the power of 2 (S = numbers**2). To construct the array, we use (np.arange(1, 37)) to generate the values, and use (np.reshape(6, 6)) to shape array (S) into 6 rows × 6 columns. </p>
+#### <p align="justify"> This problem requires us to create a 6×6 array named S to find which squared values are greater than the average (mean) of all the squared values. The values inside the 6×6 array consists of the squares of first 36 positive integers, wherein we raise each values to the power of 2 `(S = numbers**2)`. To construct the array, we use `np.arange(1, 37)` to generate the values, and use `np.reshape(6, 6)` to shape array `(S)` into 6 rows × 6 columns. </p>
 
 ```python
   import numpy as np
@@ -245,7 +245,7 @@ The first array consists of the first 36 positive integers. The second array is 
                    [ 625,  676,  729,  784,  841,  900],
                    [ 961, 1024, 1089, 1156, 1225, 1296]])
 
-To shape the array into 6 rows × 6 columns, we used (S.reshape(6, 6)).
+To shape the array into 6 rows × 6 columns, we used `S.reshape(6, 6)`.
 
 ```python
     S_mean = S.mean()
