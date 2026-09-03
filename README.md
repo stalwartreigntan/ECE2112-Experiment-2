@@ -5,9 +5,9 @@
 ##### Name: Tan, Stalwart Reign J.
 ##### Section: 2ECE-D
 
-## _____________________________________________________________________________________________________
+---
 #### <p align="justify"> This experiment focuses on the application of Numerical Python, also known as NumPy, for specific performances, such as numerical computations, mathematical operations, and manipulation of arrays in Python. This will also demonstrate how to properly code numerical data without using for or while loops, instead 'Boolean' and 'NumPy arrays' will be utilized in this experiment. </p>
-## _____________________________________________________________________________________________________
+---
 
 #
 ## A. Reproducible Normalization Problem
@@ -289,7 +289,7 @@ To save the NumPy array as .npy file:
 ```
 #
 #
-## _____________________________________________________________________________________________________
+---
 # Conclusion:
 #### <p align="justify"> Even without the use of loops, we can achieve how to create, reshape, and calculate arrays using NumPy. This experiment demonstrated the application of normalization that was associated by mean and standard deviation. While Boolean filtering and cubing or squaring values were used to satisfy given conditions. NumPy has a significant performance in making numerical data clean and organized. </p>
-## _____________________________________________________________________________________________________
+---
