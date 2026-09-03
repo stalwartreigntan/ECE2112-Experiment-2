@@ -14,11 +14,11 @@
 #### <p align="justify"> In this problem, a 5×5 array (X) is composed of random integers from 10 to 100, and it is asked to get the average (.mean()) and standard deviation (.std()) of X. To achieve a mean of approximately 0 and standard deviation of approximately 1 without using loop, we have to normalize the array using (X - np.mean(X)) / np.std(X)). The normalized array (X_normalized) is a new set of 5×5 integer array that came from the original random integer values in array (X). </p>
 
 ```python
-import numpy as np
+  import numpy as np
   
-np.random.seed(2112)
-X = np.random.randint(10, 101, size=(5, 5))
-X                                             #5x5 array (X)
+  np.random.seed(2112)
+  X = np.random.randint(10, 101, size=(5, 5))
+  X                                             #5x5 array (X)
 ``` 
         #Result:
             array([[48, 11, 15, 67, 21],
@@ -32,8 +32,8 @@ X                                             #5x5 array (X)
 (np.random.seed(2112)) allows us to create a reproducible random 5×5 integer array (X), while (np.random.randint(10, 101, size=(5, 5))) generates the random integers inside the array. 
 
 ```python
-Average = np.mean(X)
-Average
+  Average = np.mean(X)
+  Average
 ```
         #Result:
             np.float64(46.36)
@@ -112,10 +112,10 @@ np.save() allows us to save a NumPy array as a .npy file.
 #### <p align="justify"> The use of NumPy in this problem is to create a 10×10 array named C. The values of this array consists of first 100 positive integers. To create array C, we use (np.arange(1, 101)) to generate the values inside the array, and use (C.reshape (10, 10)) to form a 10 rows × 10 columns of the values after we define the numbers. </p>
 
 ```python
-import numpy as np
+  import numpy as np
 
-numbers = np.arange(1, 101)
-numbers
+  numbers = np.arange(1, 101)
+  numbers
 ```
         #Result:
             array([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,
@@ -130,8 +130,8 @@ numbers
 The values inside the array are the first 100 positive integers.
 
 ```python
-C = numbers**3
-C
+  C = numbers**3
+  C
 ```
         #Result:
             array([      1,       8,      27,      64,     125,     216,     343,
@@ -153,8 +153,8 @@ C
 Array C must begin with 1^3 and ends with 100^3, Therefore; (C = numbers**3) simply cubes each number inside the array, which results to a list of cubed values.
 
 ```python
-C = C.reshape (10, 10)
-C                         #10 rows, 10 columns
+  C = C.reshape (10, 10)
+  C                         #10 rows, 10 columns
 ```
         #Result:
             array([[      1,       8,      27,      64,     125,     216,     343,    512,     729,    1000],
@@ -172,8 +172,8 @@ C                         #10 rows, 10 columns
 <p align="justify"> To obtain every cubed value divisible by 4, we use the Boolean condition (C[C % 4 == 0]). To understand this Boolean condition, (C % 4) tells the program to divide each value inside array C by 4, while ( == 0 ) gives the values that are divisible by 4 without a remainder, or with a remainder of 0. </p>
 
 ```python
-div_by_4 = C[C % 4 == 0]
-div_by_4
+  div_by_4 = C[C % 4 == 0]
+  div_by_4
 ```
         #Result:
             array([      8,      64,     216,     512,    1000,    1728,    2744,
@@ -206,7 +206,7 @@ Display the shape of C, the array div by 4, and the number of selected elements.
 
 To save the NumPy array as .npy file:
 ```python
-np.save("div_by_4.npy", div_by_4)
+    np.save("div_by_4.npy", div_by_4)
 ```
 
 #
@@ -214,17 +214,17 @@ np.save("div_by_4.npy", div_by_4)
 #### <p align="justify"> This problem requires us to create a 6×6 array named S to find which squared values are greater than the average (mean) of all the squared values. The values inside the 6×6 array consists of the squares of first 36 positive integers, wherein we raise each values to the power of 2 (S = numbers**2). To construct the array, we use (np.arange(1, 37)) to generate the values, and use (np.reshape(6, 6)) to shape array (S) into 6 rows × 6 columns. </p>
 
 ```python
-import numpy as np
+  import numpy as np
 
-numbers = np.arange(1, 37)
-numbers
+  numbers = np.arange(1, 37)
+  numbers
 ```
         #Result:
             array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36])
 
 ```python
-S = numbers**2
-S
+  S = numbers**2
+  S
 ```
         #Result:
             array([   1,    4,    9,   16,   25,   36,   49,   64,   81,  100,  121, 144,  169,  196,  225,  256,  289,  324,  361,  400,  441,  484,
@@ -234,8 +234,8 @@ S
 The first array consists of the first 36 positive integers. The second array is the list of values that were raised to the power of 2 from the original values in the first array.
 
 ```python
-S = S.reshape(6, 6)
-S
+  S = S.reshape(6, 6)
+  S
 ```
         #Result:
             array([[   1,    4,    9,   16,   25,   36],
