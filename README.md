@@ -1,12 +1,12 @@
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+---
 # ECE 2112 - Experiment 2: Numerical Python (NumPy)
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+---
 
 ##### Name: Tan, Stalwart Reign J.
 ##### Section: 2ECE-D
 
----
-#### <p align="justify"> This experiment focuses on the application of Numerical Python, also known as NumPy, for specific performances, such as numerical computations, mathematical operations, and manipulation of arrays in Python. This will also demonstrate how to properly code numerical data without using for or while loops, instead 'Boolean' and 'NumPy arrays' will be utilized in this experiment. </p>
+
+#### <p align="justify"> This experiment focuses on the application of <mark>Numerical Python</mark>, also known as NumPy, for specific performances, such as numerical computations, mathematical operations, and manipulation of arrays in Python. This will also demonstrate how to properly code numerical data without using for or while loops, instead 'Boolean' and 'NumPy arrays' will be utilized in this experiment. </p>
 ---
 
 #
